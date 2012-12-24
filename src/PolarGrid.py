@@ -1,5 +1,3 @@
-__author__ = 'michaelmarkieta'
-
 import numpy as np
 
 def BuildCircle(Rho=1, Centroid=(0,0), Tau=1000):
@@ -13,7 +11,9 @@ def BuildCircle(Rho=1, Centroid=(0,0), Tau=1000):
         AdjustedY = (Y + float(Centroid[1])) * float(Rho)
         AdjustedX = (X + float(Centroid[0])) * float(Rho)
 
-        CircleGeom.append([UniqueID, [AdjustedX, AdjustedY]])
+        CircleGeom.append((UniqueID, AdjustedX, AdjustedY))
         UniqueID += 1
 
-    return CircleGeom
+    CircleArray = np.asarray(CircleGeom, dtype=([('UniqueID', 'i4'),('X','f4'),('Y','f4')]))
+
+    return CircleArray
