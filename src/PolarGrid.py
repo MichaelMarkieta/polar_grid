@@ -16,8 +16,8 @@ def PolarGrid(Rho=1, Centroid=(0,0), Theta=2, Rings=1, Tau=1000):
     X:          The X coordinate pair of a point in the geometry of the respective radial divider
     Y:          The Y coordinate pair of a point in the geometry of the respective radial divider
     """
+    CoordList = [] # Store the coordinate pairs
     PolarGeom = [] # Stores the unique id of a radial divider and it's geometric coordinate pairs
-    CoordList = [] # Store the coordinate pairs in a list object
 
     AngleTheta = 360 / int(Theta)
     Precision = 360.0 / float(Tau)
