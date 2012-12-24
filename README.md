@@ -10,11 +10,3 @@ It was built because I have not come accross any tools in a GIS that allow
 you to build a polar grid. Rather, we are left to first building a circle (buffer),
 then dividing that buffer into multiple radial sections (pizza triangles), and
 further subdivide that into circular concentric rings.
-
-# How do I use PolarGrid.py #
-
-lorem ipsum
-
-# Some ascii art math #
-
-lorem ipsum

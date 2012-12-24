@@ -1,3 +1,7 @@
+"""
+Copyright (c) 2012 ICRL
+See the file license.txt for copying permission.
+"""
 import numpy as np
 
 def PolarGrid(Rho=1, Centroid=(0,0), Theta=2, Rings=1, Tau=1000):
