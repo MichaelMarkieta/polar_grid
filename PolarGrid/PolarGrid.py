@@ -1,5 +1,5 @@
 """
-Copyright (c) 2012 ICRL
+Copyright (c) 2012 Michael Markieta
 See the file license.txt for copying permission.
 """
 import numpy as np
