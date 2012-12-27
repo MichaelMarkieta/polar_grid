@@ -14,7 +14,7 @@ def PolarGrid(Rho=1, Centroid=(0,0), Theta=2, Rings=1, Tau=1000):
     :param Centroid:    Origin of the grid
     :type Centroid:     2 item tuple of floats (float, float)
     :param Theta:       Number of radial dividers of Rho*2 distance that divide the grid into equal 1/2s, 1/4s, 1/8s...
-    :type Theta:        Float
+    :type Theta:        Integer
     :param Rings:       [TODO:] Number of circular concentric dividers
     type Rings:         [TODO:] Integer
     :param Tau:         Frequency at which points are placed along the perimeter of the grid
@@ -29,7 +29,7 @@ def PolarGrid(Rho=1, Centroid=(0,0), Theta=2, Rings=1, Tau=1000):
     PolarGeom = [] # Stores the unique id of a radial divider and it's geometric coordinate pairs
 
     # Number of points along the perimeter per radial divider in relation to Tau (more points as Tau increases)
-    TauRelativeToTheta = np.ceil(int(Tau) * (1.0 / float(Theta)))
+    TauRelativeToTheta = np.ceil(float(Tau) * (1.0 / float(Theta)))
 
     # Tau adjusted for rounding error in TauRelativeToTheta when using ceiling method
     AdjustedTau = TauRelativeToTheta * Theta
@@ -47,8 +47,8 @@ def PolarGrid(Rho=1, Centroid=(0,0), Theta=2, Rings=1, Tau=1000):
         Y = np.sin(np.radians(angle))
 
         # Shift coordinates about centroid and extend to accommodate Rho
-        AdjustedX = (X + float(Centroid[0])) * float(Rho)
-        AdjustedY = (Y + float(Centroid[1])) * float(Rho)
+        AdjustedX = ((X * float(Rho)) + (float(Centroid[0])))
+        AdjustedY = ((Y * float(Rho)) + (float(Centroid[1])))
 
         # The first item in our for statement
         if angle == 0:
