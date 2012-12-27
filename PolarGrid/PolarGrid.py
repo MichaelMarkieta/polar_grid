@@ -9,22 +9,27 @@ def PolarGrid(Rho=1, Centroid=(0,0), Theta=2, Rings=1, Tau=1000):
     This function is used to build a Numpy Array that contains the geometry
     necessary to build a polar grid shape on a geographic coordinate system.
     --------------------------------------------------------------------------------------------------------------------
-    Rho:        Radius of the grid
-    Centroid:   Origin of the grid
-    Theta:      Number of radial dividers of Rho*2 distance that divide the grid into equal 1/2s, 1/4s, 1/8s...
-    Rings:      [To come] Number of circular concentric dividers
-    Tau:        Frequency at which points are placed along the perimeter of the grid (higher frequency = smoother edge)
+    :param Rho:         Radius of the grid
+    :type Rho:          Float
+    :param Centroid:    Origin of the grid
+    :type Centroid:     2 item tuple of floats (float, float)
+    :param Theta:       Number of radial dividers of Rho*2 distance that divide the grid into equal 1/2s, 1/4s, 1/8s...
+    :type Theta:        Float
+    :param Rings:       [TODO:] Number of circular concentric dividers
+    type Rings:         [TODO:] Integer
+    :param Tau:         Frequency at which points are placed along the perimeter of the grid
+    :type Tau:          Integer
     --------------------------------------------------------------------------------------------------------------------
     The geometry is returned in a numpy array of (UniqueID, [[X1,Y1],[X2,Y2],...,[Xn,Yn]])
-    UniqueID:   The unique identifier for each radial divider
-    X:          The X coordinate pair of a point in the geometry of the respective radial divider
-    Y:          The Y coordinate pair of a point in the geometry of the respective radial divider
+    UniqueID:           The unique identifier for each radial divider
+    X:                  The X coordinate pair of a point in the geometry of the respective radial divider
+    Y:                  The Y coordinate pair of a point in the geometry of the respective radial divider
     """
     CoordList = [] # Store the coordinate pairs
     PolarGeom = [] # Stores the unique id of a radial divider and it's geometric coordinate pairs
 
     # Number of points along the perimeter per radial divider in relation to Tau (more points as Tau increases)
-    TauRelativeToTheta = np.ceil(float(Tau) * (1.0 / float(Theta)))
+    TauRelativeToTheta = np.ceil(int(Tau) * (1.0 / float(Theta)))
 
     # Tau adjusted for rounding error in TauRelativeToTheta when using ceiling method
     AdjustedTau = TauRelativeToTheta * Theta
