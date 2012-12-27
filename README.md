@@ -34,13 +34,13 @@ Download and extract the latest working distribution: [0.1](https://github.com/M
     >>>from PolarGrid import *
     >>>PolarGrid()
 
-<img src="https://www.dropbox.com/s/3m4q3bxoob0edni/Example1.png" width="400px"/>
+<img src="https://dl-web.dropbox.com/get/Photos/PolarGrid/Example1.png?w=7d4e6a67" width="400px"/>
 
     >>>PolarGrid(Rho=3, Centroid=(1,2), Theta=8, Tau=1000)
 
-<img src="https://www.dropbox.com/s/lsl1ria3lr38id5/Example2.png" width="400px"/>
+<img src="https://dl-web.dropbox.com/get/Photos/PolarGrid/Example2.png?w=673f971c" width="400px"/>
 
     >>>PolarGrid(4, (2,2), 16, 1000)
     
-<img src="https://www.dropbox.com/s/43pqdu4yjaw38ya/Example3.png" width="400px"/>
+<img src="https://dl-web.dropbox.com/get/Photos/PolarGrid/Example3.png?w=7c277ed6" width="400px"/>
 
