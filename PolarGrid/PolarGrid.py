@@ -4,7 +4,7 @@ See the file license.txt for copying permission.
 """
 import numpy as np
 
-def PolarGrid(Rho=1, Centroid=(0,0), Theta=2, Rings=1, Tau=1000):
+def PolarGrid(Rho=1, Centroid=(0,0), Theta=2, Rings=0, Tau=1000):
     """
     This function is used to build a Numpy Array that contains the geometry
     necessary to build a polar grid shape on a geographic coordinate system.
