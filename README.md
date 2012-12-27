@@ -23,7 +23,7 @@ Don't know what pip is? Wiki and download [here](http://pypi.python.org/pypi/pip
 
 ### Or manually
 
-Download and extract the latest working distribution: [0.1](https://github.com/MichaelMarkieta/PolarGrid/blob/master/dist/PolarGrid-0.1.zip)
+Download and extract the latest working distribution: [0.1](https://github.com/MichaelMarkieta/PolarGrid/blob/master/dist/PolarGrid-0.1.zip) (Tip: Right-click and download)
 
     $ cd PolarGrid-0.1
     $ python setup.py install
