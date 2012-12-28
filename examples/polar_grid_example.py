@@ -2,7 +2,7 @@
 Copyright (c) 2012 Michael Markieta
 See the file license.txt for copying permission.
 """
-from polar_grid import *
+from polar_grid import polar_grid
 import matplotlib.pyplot as plt
 from mpl_toolkits.axes_grid.axislines import SubplotZero
 
@@ -13,7 +13,7 @@ fig.add_subplot(ax)
 
 # add axis lines for coordinate geometry (4 quadrants)
 for direction in ["xzero", "yzero"]:
-    ax.axis[direction].set_axisline_style("-|>", size=1)
+    ax.axis[direction].set_axisline_style("-|>", size=.75)
     ax.axis[direction].set_visible(True)
 
 # remove axis lines/labels for rectangular geometry (-x and -y don't exist)
@@ -24,7 +24,7 @@ X = [] # hold x-coordinates from radial dividers
 Y = [] # hold y-coordinates from radial dividers
 
 # Generate geometry for a polar grid of 3-unit radius, centroid at (1,1), with 16 divisions and precision of 1500 points
-geom = polar_grid(3, (-2,1), 8, "", 4000)
+geom = polar_grid(rho=4, centroid=(-2,1), theta=8, tau=4000)
 
 # Add coordinates from each radial divider to the X and Y lists
 for num in range(0, len(geom)):
