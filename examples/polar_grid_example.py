@@ -2,7 +2,7 @@
 Copyright (c) 2012 Michael Markieta
 See the file license.txt for copying permission.
 """
-from PolarGrid import *
+from polar_grid import *
 import matplotlib.pyplot as plt
 from mpl_toolkits.axes_grid.axislines import SubplotZero
 
@@ -24,11 +24,11 @@ X = [] # hold x-coordinates from radial dividers
 Y = [] # hold y-coordinates from radial dividers
 
 # Generate geometry for a polar grid of 3-unit radius, centroid at (1,1), with 16 divisions and precision of 1500 points
-Geom = PolarGrid(Rho=3, Centroid=(1,1), Theta=16, Tau=1500)
+geom = polar_grid(rho=3, centroid=(1,1), theta=16, tau=1500)
 
 # Add coordinates from each radial divider to the X and Y lists
-for num in range(0, len(Geom)):
-    for (x,y) in Geom[num][1]:
+for num in range(0, len(geom)):
+    for (x,y) in geom[num][1]:
         X.append(x)
         Y.append(y)
 

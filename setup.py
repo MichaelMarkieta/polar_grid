@@ -5,12 +5,12 @@ See the file license.txt for copying permission.
 from distutils.core import setup
 
 setup(
-    name='PolarGrid',
+    name='polar_grid',
     version='0.1',
-    packages=['PolarGrid'],
-    url='https://github.com/MichaelMarkieta/PolarGrid/tree/master/PolarGrid',
+    packages=['polar_grid'],
+    url='https://github.com/MichaelMarkieta/polar_grid/tree/master/polar_grid',
     license='MIT',
-    author='MichaelMarkieta',
+    author='Michael Markieta',
     author_email='michael@spatialanalysis.ca',
     description=''
 )
