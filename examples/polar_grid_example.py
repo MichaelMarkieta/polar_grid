@@ -23,7 +23,7 @@ for direction in ["left", "right", "bottom", "top"]:
 X = [] # hold x-coordinates from radial dividers
 Y = [] # hold y-coordinates from radial dividers
 
-# Generate geometry for a polar grid of 3-unit radius, centroid at (1,1), with 16 divisions and precision of 1500 points
+# Generate geometry for a polar grid of 4-unit radius, centroid at (-2,1), with 8 divisions and precision of 4000 points
 geom = polar_grid(rho=4, centroid=(-2,1), theta=8, tau=4000)
 
 # Add coordinates from each radial divider to the X and Y lists
