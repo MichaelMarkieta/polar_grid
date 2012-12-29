@@ -49,4 +49,5 @@ Download and extract the latest working distribution: [0.1](https://github.com/M
     >>>pg.to_shp(polar_grid, r"C:\Temp\polar_grid.shp)
 
 <img src="https://dl.dropbox.com/u/105531941/PolarGrid/arcmap.PNG" width="500px"/>
+
 ** note the use of projected coordinates (units=metres) for centroid and radius.
