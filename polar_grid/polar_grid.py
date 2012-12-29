@@ -108,7 +108,7 @@ def to_shp(polar_geom_array, output):
     feature_list = [] # A list that will hold each of the radial divider objects
 
     # For each coordinate pair, set the x,y properties and add to the Array object.
-    for unique_id in range(0,len(polar_geom_array)):
+    for unique_id in range(0, len(polar_geom_array), 1):
         for coord_pair in polar_geom_array[unique_id][1]:
             point.X = coord_pair[0]
             point.Y = coord_pair[1]
@@ -117,6 +117,6 @@ def to_shp(polar_geom_array, output):
 
         polygon = arcpy.Polygon(array) # Create a polygon object based on the array of points
         array.removeAll() # Clear the array for future use
-        feature_list.append(polygon) # Append to the list of polygon objects
+        feature_list.append(polygon) # Append to the list of radial divider objects
 
     arcpy.CopyFeatures_management(feature_list, output) # Write the polar grid geometry to a shapefile
