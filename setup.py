@@ -12,5 +12,5 @@ setup(
     license='MIT',
     author='Michael Markieta',
     author_email='michael@spatialanalysis.ca',
-    description=''
+    description='', requires=['numpy']
 )

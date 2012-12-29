@@ -5,9 +5,11 @@ See the file license.txt for copying permission.
 import numpy as np
 try:
     import arcpy # arcpy used to build shapefile for ArcGIS users; only applicable to ArcGis users
-except:
+except ImportError:
     pass
 
+
+#noinspection PyUnusedLocal
 def polar_grid(rho=1, centroid=(0,0), theta=4, rings=0, tau=4000):
     """
     This function is used to build a Numpy Array that contains the geometry
@@ -35,7 +37,7 @@ def polar_grid(rho=1, centroid=(0,0), theta=4, rings=0, tau=4000):
     # Number of points along the perimeter per radial divider in relation to Tau (more points as Tau increases)
     tau_relative_to_theta = np.floor(float(tau) * (1.0 / float(theta)))
 
-    # Tau adjusted for rounding error in tau_relative_to_theta when using ceiling method
+    # Tau adjusted for rounding error in tau_relative_to_theta when using floor method
     adjusted_tau = tau_relative_to_theta * theta
 
     unique_id = 1 # The unique identifier for each radial divider
@@ -73,10 +75,8 @@ def polar_grid(rho=1, centroid=(0,0), theta=4, rings=0, tau=4000):
             polar_geom.append((unique_id, coord_list))
 
             unique_id += 1 # Increase the unique_id field for each subsequent radial divider geometry
-            coord_list = [] # Dump coordinate pairs from previous radial divider
 
-            coord_list.append([centroid[0], centroid[1]])
-            coord_list.append([adjusted_x, adjusted_y])
+            coord_list = [[centroid[0], centroid[1]],[adjusted_x, adjusted_y]]
 
         # All points along the perimeter of the polar grid that do not fall on angle Theta
         else:
@@ -93,29 +93,30 @@ def polar_grid(rho=1, centroid=(0,0), theta=4, rings=0, tau=4000):
 
 
 def to_shp(polar_geom_array, output):
-    # Create empty Point and Array objects
-    point = arcpy.Point()
-    array = arcpy.Array()
+    """
+    This function is used to create a shapefile from the polar grid
+    geometry array returned from the polar_grid function.
+    --------------------------------------------------------------------------------------------------------------------
+    :param polar_geom_array:    Array object returned by polar_grid function
+    :type polar_geom_array:     np.array
+    :param output:              Output path including name and format (C:/Path/To/File.shp)
+    :type output:               String
+    """
+    point = arcpy.Point() # Empty point object
+    array = arcpy.Array() # Empty array object
 
-    # A list that will hold each of the radial divider objects
-    feature_list = []
+    feature_list = [] # A list that will hold each of the radial divider objects
 
+    # For each coordinate pair, set the x,y properties and add to the Array object.
     for unique_id in range(0,len(polar_geom_array)):
-        # For each coordinate pair, set the x,y properties and add to the Array object.
         for coord_pair in polar_geom_array[unique_id][1]:
             point.X = coord_pair[0]
             point.Y = coord_pair[1]
             point.ID = unique_id
             array.add(point)
 
-        # Create a polygon object based on the array of points
-        polygon = arcpy.Polygon(array)
+        polygon = arcpy.Polygon(array) # Create a polygon object based on the array of points
+        array.removeAll() # Clear the array for future use
+        feature_list.append(polygon) # Append to the list of polygon objects
 
-        # Clear the array for future use
-        array.removeAll()
-
-        # Append to the list of polygon objects
-        feature_list.append(polygon)
-
-    # Create a copy of the polygon objects, by using feature_list as input to the CopyFeatures tool.
-    arcpy.CopyFeatures_management(feature_list, output)
+    arcpy.CopyFeatures_management(feature_list, output) # Write the polar grid geometry to a shapefile
