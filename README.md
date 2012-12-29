@@ -45,7 +45,8 @@ Download and extract the latest working distribution: [0.1](https://github.com/M
 
 ### Export to shapefile
 
-    >>>polar_grid = polar_grid(Rho=3, Centroid=(1,2), Theta=8, Rings="", Tau=1000)
+    >>>polar_grid = polar_grid(rho=5000, centroid=(629270.658,4838085.069), theta=8, rings="", tau=4000)
     >>>to_shp(polar_grid, r"C:\Temp\polar_grid.shp)
 
+*note the use of projected (metres) coordinates for centroid and radius.
 <img src="https://dl.dropbox.com/u/105531941/PolarGrid/arcmap.PNG" width="400px"/>
