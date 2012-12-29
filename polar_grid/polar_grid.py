@@ -22,7 +22,7 @@ def polar_grid(rho=1, centroid=(0,0), theta=4, rings=0, tau=4000):
     :param theta:       Number of radial dividers of Rho*2 distance that divide the grid into equal 1/2s, 1/4s, 1/8s...
     :type theta:        Integer
     :param rings:       [TODO:] Number of circular concentric dividers
-    type Rings:         [TODO:] Integer
+    :type Rings:         [TODO:] Integer
     :param tau:         Frequency at which points are placed along the perimeter of the grid
     :type tau:          Integer
     --------------------------------------------------------------------------------------------------------------------
