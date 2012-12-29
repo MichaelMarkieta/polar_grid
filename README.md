@@ -48,5 +48,5 @@ Download and extract the latest working distribution: [0.1](https://github.com/M
     >>>polar_grid = pg.polar_grid(rho=5000, centroid=(629270.658,4838085.069), theta=8, rings="", tau=4000)
     >>>pg.to_shp(polar_grid, r"C:\Temp\polar_grid.shp)
 
-*note the use of projected coordinates (units=metres) for centroid and radius.
 <img src="https://dl.dropbox.com/u/105531941/PolarGrid/arcmap.PNG" width="500px"/>
+** note the use of projected coordinates (units=metres) for centroid and radius.
