@@ -21,13 +21,13 @@ def polar_grid(rho=1, centroid=(0,0), theta=4, rings=0, tau=4000):
     :type centroid:     2 item tuple of floats (float, float)
     :param theta:       Number of radial dividers of Rho*2 distance that divide the grid into equal 1/2s, 1/4s, 1/8s...
     :type theta:        Integer
-    :param rings:       [TODO:] Number of circular concentric dividers
-    :type Rings:         [TODO:] Integer
+    :param rings:       [TODO] Number of circular concentric dividers
+    :type Rings:        [TODO] Integer
     :param tau:         Frequency at which points are placed along the perimeter of the grid
     :type tau:          Integer
     --------------------------------------------------------------------------------------------------------------------
     The geometry is returned in a numpy array of (unique_id, [[X1,Y1],[X2,Y2],...,[Xn,Yn]])
-    unique_id:           The unique identifier for each radial divider
+    unique_id:          The unique identifier for each radial divider
     x:                  The x coordinate pair of a point in the geometry of the respective radial divider
     y:                  The y coordinate pair of a point in the geometry of the respective radial divider
     """
