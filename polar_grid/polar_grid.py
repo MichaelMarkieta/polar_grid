@@ -112,7 +112,7 @@ def to_shp(polar_geom_array, output):
         for coord_pair in polar_geom_array[unique_id][1]:
             point.X = coord_pair[0]
             point.Y = coord_pair[1]
-            point.ID = unique_id
+            point.ID = unique_id # Does nothing...?
             array.add(point)
 
         polygon = arcpy.Polygon(array) # Create a polygon object based on the array of points
