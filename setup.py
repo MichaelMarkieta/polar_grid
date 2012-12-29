@@ -9,8 +9,8 @@ setup(
     version='0.1',
     packages=['polar_grid'],
     url='https://github.com/MichaelMarkieta/polar_grid/tree/master/polar_grid',
-    license='MIT',
+    license='LICENSE.txt',
     author='Michael Markieta',
     author_email='michael@spatialanalysis.ca',
-    description='', requires=['numpy']
+    description='README.md', requires=['numpy']
 )
