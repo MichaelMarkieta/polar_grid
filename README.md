@@ -15,13 +15,13 @@ further subdivide that into circular concentric rings.
 
 # Want PolarGrid?
 
-### Use `pip`
+#### Use `pip`
 
     $ pip install polar_grid
     
 Don't know what pip is? Wiki and download [here](http://pypi.python.org/pypi/pip).
 
-### Or manually
+#### Or manually
 
 Download and extract the latest working distribution: [0.1](https://github.com/MichaelMarkieta/polar_grid/blob/master/dist/polar_grid-0.1.zip) (tip: right-click and download)
 
@@ -30,7 +30,7 @@ Download and extract the latest working distribution: [0.1](https://github.com/M
 
 # How do I use it?
 
-### Generate Geometry
+#### Generate Geometry
 
     $ python
     >>>import polar_grid as pg
@@ -43,7 +43,7 @@ Download and extract the latest working distribution: [0.1](https://github.com/M
 
 <img src="https://dl.dropbox.com/u/105531941/PolarGrid/Example1.png" width="300px"/>
 
-### Export to shapefile
+#### Export to shapefile
 
     >>>polar_grid = pg.polar_grid(rho=5000, centroid=(629270.658,4838085.069), theta=8, rings="", tau=4000)
     >>>pg.to_shp(polar_grid, r"C:\Temp\polar_grid.shp)
