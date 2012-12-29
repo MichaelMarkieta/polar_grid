@@ -23,7 +23,7 @@ Don't know what pip is? Wiki and download [here](http://pypi.python.org/pypi/pip
 
 ### Or manually
 
-Download and extract the latest working distribution: [0.1](https://github.com/MichaelMarkieta/PolarGrid/blob/master/dist/PolarGrid-0.1.zip) (tip: right-click and download)
+Download and extract the latest working distribution: [0.1](https://github.com/MichaelMarkieta/polar_grid/blob/master/dist/polar_grid-0.1.zip) (tip: right-click and download)
 
     $ cd polar_grid-0.1
     $ python setup.py install
@@ -48,5 +48,5 @@ Download and extract the latest working distribution: [0.1](https://github.com/M
     >>>polar_grid = polar_grid(rho=5000, centroid=(629270.658,4838085.069), theta=8, rings="", tau=4000)
     >>>to_shp(polar_grid, r"C:\Temp\polar_grid.shp)
 
-*note the use of projected (metres) coordinates for centroid and radius.
+*note the use of projected coordinates (units=metres) for centroid and radius.
 <img src="https://dl.dropbox.com/u/105531941/PolarGrid/arcmap.PNG" width="400px"/>
